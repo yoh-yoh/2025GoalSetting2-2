@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css"  th:href="@{/css/starter-template.css}" rel="stylesheet">
+  <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=jz-olRoadJuyHeqncfOQtRMIhqDoZEKe3ePUQKxUEFGHokWs4eigg6PpL0mVbjfEuwCAA4bwF7aCi1q8mQwEVG9cuNtwce4P1x_8iEA3GuuPCvDVstgFMQERgr4vyvdRjU62RTcjkAsI3cKPqCNlOT53cphnBC4otNwX8b-_IYMW1IjOi6rCpe1j5qZkAAnJxP3ezBUJlTch8aZB9u105OPOnOQhcIuSLyXG4vo5oStPd9xKjTnVmTZ3G8VhqjTbhalGtsqZ9k4kvmI7iOVsfcfals1LnVtfD9YLpDYatbzRyEd-OVr57hMbBwyYEVVrWI0ltfYwRz8InMikvngBn_kOsU5zxKLpgr4_m-WzByn2Bnauo5JFJ1A6AgJjCb7U8ccmWj_fL5YEk8xpi3rP2vowSFB4YTEX75DNNu4evn0tA1ecDmJWKz6uaaq8o0ol-h1in9H0TrjRD5QtsoMIqQrqc3Kn_bOHWPIwkvYSFGS43WviEcyQkqur3WiBzy9DV4_ewXBw6m3tt3E7CVkbFSV7DPCx5FQoC9EHulYEWgW7BEHSUoTSR9AbIpjPdj7sJPiOzfzuTV8ksVRQnDdNUYsvfRQTjbDUWJFTcCUa6mgFzqO7u508YmfIktebj8kEWA2nlwcl8PzUvu9seANua-rnDF1EhqykK8rk35GttqgYwBdOkEWPNWFY-n10L5AWix5uh74yE0U7x5v2XKfNw8WWswiHIF1voWr76fWMw2Lqrd6KBvqXREzY4gXUMkMUMCMyKer8NvqrJfL8fXKlJg" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9hdHQtYy51ZGVteWNkbi5jb20vMjAxOS0wOC0xM18wMy0zMS00Ny1iMmQ4NjI4YzU0MGQ0Y2Y1Nzg1MTg0NGIzY2EzYzZlYS9vcmlnaW5hbC5odG1sP3Jlc3BvbnNlLWNvbnRlbnQtZGlzcG9zaXRpb249YXR0YWNobWVudCUzYiUyMGZpbGVuYW1lJTNkaW5kZXgtYm9vdC5odG1sJkV4cGlyZXM9MTc1NzE0Mjk0MSZTaWduYXR1cmU9TkM1NzltUERNMEZ3OXJ0dmZqNVpMbEg2UEFqOWkzWWw3bWhZTlhpckxEaS1NYkh0MFdrd1R3QzIwRTFhV0p5a1lveWF6anV0WXBFeFdpeFlEcERoejJOVW9jQmZkWnZSeDN4WUpWUFZ1b2xVQjJQZjltMzR0MEszb2FIY0EyUzY4dERjfnNMSW1teE5uWERFYnlKOGxRNzRZQVo2VH5za1JVMW11WnY3LX5LaUF6amhYUUJkLWRjaUZCWFlraTd-bjB2ajN0WUZReWpMNE5aenp4TEt5SWVURXZHMktjelhvWWRPUExjMnpXYkxGTVhWMHpEUDV1R1JCZGprU3BwUm1CaHVIcE9CMmFzN2lEMFZCc1lSeFBCZXN0cEdOVkF-LVlxVjFHQlRpZDlMa3JqaUEwQVZnSXliUzFkQ1BoYllLZ0pTaXNqcFR4OUtxVnhoM3pGb1NnX18mS2V5LVBhaXItSWQ9SzNNRzE0OEs5UklSRjQ"/></head>
+
+  <body>
+
+	<div th:replace="~{block/header::headerA}"></div>
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1 th:text="${title}">Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+      
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">contents</th>
+      <th scope="col">datetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="inquiry : ${inquiryList}">
+      <td  scope="row" th:text="${inquiry.id}">Mark</td>
+      <td th:text="${inquiry.name}">Otto</td>
+      <td th:text="${inquiry.email}">@mdo</td>
+      <td th:text="${inquiry.contents}">Otto</td>
+      <td th:text="${inquiry.created}">@mdo</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="@{/js/jquery-slim.min.js}"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"  th:src="@{/js/popper.min.js}"></script>
+    <script src="../../dist/js/bootstrap.min.js"  th:src="@{/js/bootstrap.min.js}"></script>
+    </body>
+</html>
